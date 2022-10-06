@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+body{
+	max-width: 100%;
+  	height: auto;
+}
+
+h2{
+	margin-left:100px;
+}
+
+h4{
+	color:black;
+}
+
+p{
+	color:black;
+}
+
+.profile{
+	display:flex;	
+}
+
+.myPage_btn_set{
+	display:flex;
+	flex-wrap: wrap;	
+	justify-content: center;
+}
+
+button{
+	background-color: white;
+	margin:20px 20px;
+	width: 25%;
+	height:100px;
+	border-radius:30px;
+}
+
+#history{
+	background-image: url("../img_myPageIcon/購入履歴.png");
+	 background-size:18% auto;
+    background-position:5% 50%;
+    background-repeat:no-repeat;
+}
+
+#loginAndSecurity{
+	background-image: url("../img_myPageIcon/セキュリティ.png");
+	 background-size:18% auto;
+    background-position:5% 50%;
+    background-repeat:no-repeat;
+}
+
+#prime{
+	background-image: url("../img_myPageIcon/プライム.png");
+	 background-size:18% auto;
+    background-position:5% 50%;
+    background-repeat:no-repeat;
+}
+
+#address{
+	background-image: url("../img_myPageIcon/住所.png");
+	 background-size:18% auto;
+    background-position:5% 50%;
+    background-repeat:no-repeat;
+}
+
+#payment{
+	background-image: url("../img_myPageIcon/お金.png");
+	 background-size:18% auto;
+    background-position:5% 50%;
+    background-repeat:no-repeat;
+}
+
+#gift{
+	background-image: url("../img_myPageIcon/gift.png");
+	 background-size:18% auto;
+    background-position:5% 50%;
+    background-repeat:no-repeat;
+}
+
+#messageCenter{
+	background-image: url("../img_myPageIcon/メール.png");
+	 background-size:18% auto;
+    background-position:5% 50%;
+    background-repeat:no-repeat;
+}
+
+#costomer{
+	background-image: url("../img_myPageIcon/連絡.png");
+	 background-size:18% auto;
+    background-position:5% 50%;
+    background-repeat:no-repeat;
+}
+
+#aplication{
+	background-image: url("../img_myPageIcon/スマホ.png");
+	 background-size:18% auto;
+    background-position:5% 50%;
+    background-repeat:no-repeat;
+}
+
+span{
+	padding-top: 0;
+}

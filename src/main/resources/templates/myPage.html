@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>ロボットのネット注文</title>
+	<link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+	<link th:href="@{/css/robot.css}" rel="stylesheet" />
+	<link th:href="@{/css/myPage.css}" rel="stylesheet" />
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<span th:insert="fragment-part :: frag_Header">ここにログイン済フラグメントヘッダーが入ります</span>
+	<div class="main">
+
+		<h2>アカウントサービス</h2>
+		<div class="myPage_btn_set">
+			<button id=history>
+				<a th:href=@{/order/show-order-history}>
+					<h4>注文履歴</h4>
+					<p>発送状況の確認</p>
+				</a>
+			</button>
+			<button id="loginAndSecurity">
+				<h4>セキュリティー</h4>
+				<p>アカウント情報確認</p>
+			</button>
+			<button id="prime">
+				<h4>Prime</h4>
+				<p>会員特典情報</p>
+			</button>
+			<button id="address">
+				<h4>アドレス帳</h4>
+				<p>登録住所の追加・変更</p>
+			</button>
+			<button id="payment">
+				<h4>支払い方法</h4>
+				<p>支払い方法と設定と管理</p>
+			</button>
+			<button id="gift">
+				<h4>ギフト券</h4>
+				<p>ギフト券の登録</p>
+			</button>
+			<button id="messageCenter">
+				<h4>メッセージセンター</h4>
+				<p>お知らせメールの確認</p>
+			</button>
+			<button id="costomer">
+				<h4>カスタマーサービス</h4>
+				<p>お問合せ</p>
+			</button>
+			<button id="aplication">
+				<a th:href="@{/admin}">
+					<h4>モバイルアプリ</h4>
+					<p>アプリのダウンロード</p>
+				</a>
+			</button>
+		</div>
+	</div>
+	<span th:insert="fragment-part :: frag_footer">ここにフッターフラグメントが入ります</span>
+	<!-- end container -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+
+</html>

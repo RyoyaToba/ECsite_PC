@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+.category_btn_set{
+	display:flex;
+	flex-wrap: wrap;	
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.category{
+	background-color: white;
+	margin:30px 30px;
+	width: 25%;
+	height:200px;
+}
+
+.category-name{
+	display:inline;
+	vertical-align: 130px;
+	color:black;
+}
+
+#note-pc{
+	background-image: url("../img_indexPage/note-pc-index.png");
+	background-size:50% auto;
+    background-position:50% 80%;
+    background-repeat:no-repeat;
+	
+}
+
+#desktop-pc{
+	background-image: url("../img_indexPage/desktop-index.jpeg");
+	background-size:60% auto;
+    background-position:50% 80%;
+    background-repeat:no-repeat;
+}
+#moniter{
+	background-image: url("../img_indexPage/moniter-index.jpeg");
+	background-size:60% auto;
+    background-position:50% 80%;
+    background-repeat:no-repeat;
+}
+
+#around{
+	background-image: url("../img_indexPage/around-index.png");
+	background-size:80% auto;
+    background-position:50% 80%;
+    background-repeat:no-repeat;
+}
+#keyboad{
+	background-image: url("../img_indexPage/keyboad-index.jpeg");
+	background-size:60% auto;
+    background-position:50% 80%;
+    background-repeat:no-repeat;
+}
+#Pcparts{
+	background-image: url("../img_indexPage/pc-parts-index.jpeg");
+	background-size:90% auto;
+    background-position:50% 80%;
+    background-repeat:no-repeat;
+}
+h2{
+	text-align: center;
+	width:auto;
+	border-bottom:medium solid black;
+	padding-bottom: 20px;
+}
+div.price{
+	display:flex;
+	margin:10px 10px;
+	justify-content: space-around;
+}
+span.maker{
+	margin:10px 10px;
+	justify-content: space-around;
+}
+span.color{
+	margin:10px 10px;
+	justify-content: space-around;
+}
+div.moniter-size{
+	display:flex;
+	margin:10px 10px;
+	justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+
+
+
+

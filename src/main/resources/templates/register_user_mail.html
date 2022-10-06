@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>ネットでロボット注文</title>
+	<link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<span th:insert="fragment-part :: frag_Header">ここにログインしていない時のヘッダーが入ります</span>
+
+	<div class="container">
+
+		<!-- login form -->
+		<div class="row">
+			<div class="
+            col-lg-offset-3
+            col-lg-6
+            col-md-offset-2
+            col-md-8
+            col-sm-10
+            col-xs-12
+          ">
+				<div class="well">
+					<form th:action="@{/checkAuthenticationCode}" method="post">
+						<fieldset>
+							<legend>２段階認証システム</legend>
+							<div class="form-group">
+								<span><span
+										th:text=${session.userForm.email}></span>に届いたメールに記載されている<b>認証コード(４桁)</b>を入力してください。</span>
+								<br> <br>
+								<label for="inputedAuthenticationCode">認証コード:</label>
+								<input type="text" id="inputedAuthenticationCode" class="form-control"
+									placeholder="0000" name="inputedAuthenticationCode">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary">認 証</button>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="text-center">
+				<a th:href="@{/register}">ユーザ登録はこちら</a>
+			</div>
+		</div>
+	</div>
+	<!-- end container -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+
+</html>

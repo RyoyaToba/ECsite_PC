@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.imgitem {
+  width: 163px;
+  height: 165px;
+  object-fit: cover;
+}

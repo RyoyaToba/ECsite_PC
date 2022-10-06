@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+/* 合計金額の文字の大きさを変える */
+span#total-price {
+	font-size: 35px;
+}
+
+/* 商品一覧の画像を中央寄せにする*/
+.item-img-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+/* 商品一覧のセルを固定幅にする*/
+.item-list-table {
+	table-layout: fixed;
+}
+
+th {
+	text-align: center;
+}
+
+.container-footer {
+    bottom: 0; /*下に固定*/
+	background-color: rgb(254, 255, 255);
+	width: auto;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.company-data {
+	color: black;
+}
+
+.explanation {
+	padding: 30px 30px;
+}
+
+.explanation-left {
+	padding-left:100px;
+	padding-right: 50px;
+	padding-top: 20px;
+}
+
+.explanation-left li {
+	margin-top: 10px;
+	color: black;
+}
+
+.explanation-center {
+	padding-left:100px;
+	padding-right: 50px;
+	padding-top: 20px;
+}
+
+.explanation-center li {
+	margin-top: 10px;
+	color: black;
+}
+
+.explanation-right {
+	padding-left:100px;
+	padding-right: 50px;
+	padding-top: 20px;
+}
+
+.explanation-right li {
+	margin-top: 10px;
+	color: black;
+}
+
+.company-data li {
+	padding: 10px 0px;
+	list-style: none;
+}
+
+h3.footer-sabtitle {
+	color: black;
+}
+
+ul {
+	padding-left: 0px;
+}
+
+/* 注文履歴画面用*/
+.rev_btn {
+	color: white;
+	background-color: red;
+	margin-left: 1px;
+	margin-top: 20px;
+	width: 114px;
+}
+
+.review_btn {
+	color: black;
+	background-color: silver;
+	margin-left: 1px;
+	margin-top: 20px;
+	width: 114px;
+}
+
+.historyItemName {
+	padding-left: 25px;
+}
+
+.historyPrice {
+	padding-left: 25px;
+}
+
+.historyToppingName {
+	padding-left: 25px;
+}
+
+.historyToppingPrice {
+	padding-left: 25px;
+}
+
+/* 以下フッター用SNSアイコン調整*/
+.flowbtn {
+	font-family: 'Arial', sans-serif; /* 好きなフォントを指定してね */
+	border-radius: 4px;
+	position: relative;
+	display: inline-block;
+	width: 66px;
+	height: 58px;
+	font-size: 30px;
+	color: #fff !important;
+	transition: .5s;
+	text-decoration: none;
+	box-shadow: 0 1px 2px #999;
+}
+
+.flowbtn i {
+	position: relative;
+	bottom: 5px;
+}
+/* Twitter */
+.fl_tw1 {
+	background: #55acee;
+}
+/* Facebook */
+.fl_fb1 {
+	background: #3b5998;
+}
+/* はてブ */
+.fl_hb1 {
+	background: #1ba5dc;
+}
+/* Pocket */
+.fl_pk1 {
+	background: #ef3f56;
+}
+/* Feedly */
+.fl_fd1 {
+	background: #6cc655;
+}
+/* YouTube */
+.fl_yu1 {
+	background: #fc0d1c;
+}
+/* LINE */
+.fl_li1 {
+	background: #00c300;
+}
+/* 問い合わせ */
+.fl_ma1 {
+	background: #f3981d;
+}
+/* Instagram紫グラデ背景 */
+.insta_btn1 {
+	background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%)
+		no-repeat;
+	background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+	overflow: hidden;
+}
+/* Instagramオレンジグラデ背景 */
+.insta_btn1:before {
+	content: '';
+	position: absolute;
+	top: 33px;
+	left: -20px;
+	width: 80px;
+	height: 50px;
+	background: -webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65)
+		55%, rgba(255, 88, 96, 0) 70%);
+	background: radial-gradient(#ffdb2c 5%, rgba(255, 105, 34, 0.65) 55%,
+		rgba(255, 88, 96, 0) 70%);
+}
+/* ボタン内テキスト調整 */
+.flowbtn div {
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: 0;
+	position: relative;
+	bottom: 0px;
+}
+/* ボタンマウスホバー時 */
+.flowbtn:hover {
+	-webkit-transform: translateY(-5px);
+	-ms-transform: translateY(-5px);
+	transform: translateY(-5px);
+	text-decoration: none;
+}
+/* ulタグの内側余白を０にする */
+ul.snsbtniti {
+	padding: 0 !important;
+}
+/* ボタン全体の位置調整 */
+.snsbtniti {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+/* ボタン同士の余白調整 */
+.snsbtniti li {
+	flex: 0 0 33%;
+	text-align: center !important;
+}
+
+#bs-example-navbar-collapse-1{
+	margin:-50px 30px 0 auto;
+}
+
+.btn-search{
+	width:20px;
+	height:30px;
+	border-color: orange;
+	background-image: url("../img_icon/検索.png");
+	background-size:100% auto;
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	background-color: orange;
+}
+.width_btn_1{
+	width:30px;
+	height:30px;
+	border-color: white;
+	background-image: url("../img_icon/width_btn.png");
+	background-size:100% auto;
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	background-color: white;
+}
+
+.navbar{
+	background-color:rgba(255, 255, 255, 0.9);
+	border-color: rgb(1, 24, 146);
+	position:fixed;
+	z-index: 1;
+	width:100%;
+}
+
+.main{
+	padding-top: 70px;
+}
+
+.itemList{
+	border-bottom: medium solid black;
+}
+
+.item-container{
+	display:flex;
+	list-style-type: none;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.container-li{
+	width:33%;
+}
+
+.item-container span{
+	text-align: center;
+}
+.itemName{
+	font-size: 15px;
+}
+.itemPrice{
+	font-size: 15px;
+}
+
+

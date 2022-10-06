@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>ロボットのネット注文</title>
+	<link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+	<link th:href="@{/css/robot.css}" rel="stylesheet" />
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<span th:insert="fragment-part :: frag_Header">ここにログイン済フラグメントヘッダーが入ります</span>
+	<div class="main">
+		<div class="container">
+			<div th:if="${session.orderItemList}">
+				<!-- table -->
+				<div class="row">
+					<div class="
+            table-responsive
+            col-lg-offset-1
+            col-lg-10
+            col-md-offset-1
+            col-md-10
+            col-sm-10
+            col-xs-12
+          ">
+						<h3 class="text-center">ショッピングカート</h3>
+						<table class="table table-striped item-list-table">
+							<tbody>
+								<tr>
+									<th>
+										<div class="text-center">商品画像</div>
+									</th>
+									<th>
+										<div class="text-center">商品名</div>
+									</th>
+									<th>
+										<div class="text-center">本体価格</div>
+									</th>
+									<th>
+										<div class="text-center">オプション</div>
+									</th>
+									<th>
+										<div class="text-center">追加料金</div>
+									</th>
+									<th>
+										<div class="text-center">数量</div>
+									</th>
+									<th>
+										<div class="text-center">小計(税込)</div>
+									</th>
+								</tr>
+								<tr th:each="orderItem,status:${session.orderItemList}">
+									<td class="text-center">
+										<div class="center">
+											<img th:src="@{/img_robot/} + ${orderItem.item.imagePath}"
+												class="img-responsive img-rounded item-img-center" width="100"
+												height="300" />
+										</div>
+									</td>
+									<td class="text-center">
+										<span th:text="${orderItem.item.name}"></span>
+									</td>
+									<td class="text-center">
+										<span class="price"
+											th:text="${#numbers.formatInteger(orderItem.item.basePrice, 1, 'COMMA')} + 円"></span>
+									</td>
+									<td>
+										<ul>
+											<li>カラー:<span
+													th:text="${orderItem.item.optionMap.get('color').name}"></span></li>
+											<li>CPU:<span th:text="${orderItem.item.optionMap.get('cpu').name}"></span>
+											</li>
+											<li>RAM:<span
+													th:text="${orderItem.item.optionMap.get('ram').size}"></span>GB</li>
+											<li>ROM:<span
+													th:text="${orderItem.item.optionMap.get('rom').size}"></span>GB</li>
+										</ul>
+									</td>
+									<td>
+										<ul>
+											<li></li>
+											<li><span
+													th:text="${#numbers.formatInteger(orderItem.item.optionMap.get('cpu').price, 1, 'COMMA')} + 円"
+													th:if="${orderItem.item.optionMap.get('cpu')}"></span></li>
+											<li><span
+													th:text="${#numbers.formatInteger(orderItem.item.optionMap.get('ram').price, 1, 'COMMA')} + 円"
+													th:if="${orderItem.item.optionMap.get('ram')}"></span></li>
+											<li><span
+													th:text="${#numbers.formatInteger(orderItem.item.optionMap.get('rom').price, 1, 'COMMA')} + 円"
+													th:if="${orderItem.item.optionMap.get('rom')}"></span></li>
+										</ul>
+									</td>
+									<td class="text-center">
+										<button th:id="|quantity_negative_${status.count}|">ー</button>
+										<span th:text="${orderItem.quantity}" id="shoppingCart_quantity" th:data-quantity="${orderItem.quantity}"></span>
+										<button th:id="|quantity_pogitive_${status.count}|">＋</button>
+										<input type="hidden" name="status" th:id="${status.count}">
+									</td>
+									<td>
+										<div class="text-center"
+											th:text="${#numbers.formatInteger(orderItem.subTotal, 1, 'COMMA')} + 円">
+										</div>
+									</td>
+									<td>
+										<div class="text-center">
+											<form th:action="@{/shopping-cart/delete}" method="post">
+												<button type="submit" class="btn btn-primary">削除</button>
+												<input type="hidden" th:name="index" th:value="${status.index}">
+												<input type="hidden" th:name="id" th:value="${orderItem.id}">
+											</form>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-offset-2 col-xs-8">
+						<div class="form-group text-center">
+							<span id="total-price" th:if="${totalTax}"
+								th:text="消費税： + ${#numbers.formatInteger(totalTax, 1, 'COMMA')} + 円"></span><br />
+							<span id="total-price" th:if="${totalPriceInTax}"
+								th:text="ご注文金額合計： + ${#numbers.formatInteger(totalPriceInTax, 1, 'COMMA')} + 円"></span>
+						</div>
+					</div>
+				</div>
+				<div class="text-center" th:unless="${totalTax}" th:text="${noCartList}"
+					style="color: red; font-size: 24pt">
+				</div>
+				<div class="row">
+					<div class="col-xs-offset-5 col-xs-3">
+						<div class="form-group">
+							<form th:if="${session.orderItemList}" th:action="@{/order/confirm}"
+								action="order_confirm.html" method="post">
+								<input type="hidden" name="transitionSourcePage" value="cart_list">
+								<input class="form-control btn btn-warning btn-block" type="submit" value="注文に進む" />
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div th:unless="${session.orderItemList}">
+				<h3 class="text-center">ショッピングカートに商品がありません。</h3>
+			</div>
+		</div>
+	</div>
+	<span th:insert="fragment-part :: frag_footer">ここにフッターフラグメントが入ります</span>
+
+	<!-- end container -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/shoppingCart.js}"></script>
+
+</body>
+
+</html>
